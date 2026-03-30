@@ -1,5 +1,4 @@
 ---
-import BoxContainer from "@/layouts/BoxContainer.astro";
 import { Separator } from "@/components/ui/separator";
 
 const year = new Date().getFullYear();
@@ -7,16 +6,16 @@ const year = new Date().getFullYear();
 
 <Separator />
 
-<BoxContainer>
-  <footer class="text-neutral-500 text-xs text-center md:text-left my-8">
+<footer class="max-w-9xl mx-auto w-full px-4 py-8">
+  <div class="text-neutral-500 text-xs text-center md:text-left uppercase">
     <a
       href="https://alemartir.com"
       target="_blank"
       rel="noopener"
-      class="uppercase hover:underline"
+      class="hover:underline"
       title="Alejandro Mártir"
     >
       &copy; {year} Alejandro Mártir - AM25
     </a>
-  </footer>
-</BoxContainer>
+  </div>
+</footer>

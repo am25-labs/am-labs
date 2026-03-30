@@ -1,43 +1,33 @@
 ---
-import BoxContainer from "@/layouts/BoxContainer.astro";
 import { siGithub } from "simple-icons";
 import BrandIcon from "@/components/BrandIcon.astro";
 import { InfoIcon } from "@lucide/astro";
 ---
 
 <header>
-  <BoxContainer>
-    <div class="flex items-center justify-between pt-4 pb-8">
-      <img
-        src="/AmLogo.svg"
-        alt="AM25 Labs Logo"
-        width="72"
-        title="AM25 Labs"
-      />
+  <div
+    class="max-w-9xl mx-auto w-full flex items-center justify-between px-4 pt-4 pb-8"
+  >
+    <img src="/AmLogo.svg" alt="AM25 Labs Logo" width="72" title="AM25 Labs" />
 
-      <nav>
-        <ul class="flex items-center space-x-4">
-          <li>
-            <a
-              href="https://github.com/am25-labs"
-              target="_blank"
-              rel="noopener"
-            >
-              <BrandIcon icon={siGithub} size={20} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://alemartir.com/about"
-              target="_blank"
-              rel="noopener"
-              class="flex items-center gap-1"
-            >
-              <InfoIcon size={16} /> AM
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </BoxContainer>
+    <nav>
+      <ul class="flex items-center space-x-4">
+        <li>
+          <a href="https://github.com/am25-labs" target="_blank" rel="noopener">
+            <BrandIcon icon={siGithub} size={20} />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://alemartir.com/about"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center gap-1"
+          >
+            <InfoIcon size={16} /> AM
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>

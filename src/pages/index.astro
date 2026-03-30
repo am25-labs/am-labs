@@ -1,11 +1,11 @@
 ---
-import MainLayout from "@/layouts/MainLayout.astro";
-import BoxContainer from "@/layouts/BoxContainer.astro";
-import { Button } from "@/components/ui/button";
+import RootLayout from "@/layouts/RootLayout.astro";
 ---
 
-<MainLayout title="AM25 Labs">
-  <BoxContainer>
-    <!-- <Button>Lorem Ipsum</Button> -->
-  </BoxContainer>
-</MainLayout>
+<RootLayout title="AM25 Labs">
+  <div class="grid grid-cols-8 px-4 gap-8">
+    <div class="col-span-2"><div class="w-full h-7 bg-neutral-600"></div></div>
+    <div class="col-span-4"><div class="w-full h-7 bg-neutral-700"></div></div>
+    <div class="col-span-2"><div class="w-full h-7 bg-neutral-800"></div></div>
+  </div>
+</RootLayout>
