@@ -1,40 +1,55 @@
 ---
+import type { NavProps } from "@/types";
 import { siGithub } from "simple-icons";
 import BrandIcon from "@/components/BrandIcon.astro";
 import { InfoIcon } from "@lucide/astro";
+
+const mainNav: NavProps[] = [
+  {
+    label: "Home",
+    href: "/",
+  },
+];
 ---
 
-<header>
-  <div
-    class="max-w-9xl mx-auto w-full flex items-center justify-between px-4 pt-4 pb-16"
+<header
+  class="max-w-9xl mx-auto w-full flex items-center justify-between px-4 pt-4 pb-16"
+>
+  <a href="/"
+    ><img
+      src="/AmLogo.svg"
+      alt="AM25 Labs Logo"
+      width="72"
+      title="AM25 Labs"
+    /></a
   >
-    <a href="/"
-      ><img
-        src="/AmLogo.svg"
-        alt="AM25 Labs Logo"
-        width="72"
-        title="AM25 Labs"
-      /></a
-    >
 
-    <nav>
-      <ul class="flex items-center space-x-4">
-        <li>
-          <a href="https://github.com/am25-labs" target="_blank" rel="noopener">
-            <BrandIcon icon={siGithub} size={20} />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://alemartir.com/about"
-            target="_blank"
-            rel="noopener"
-            class="flex items-center gap-1"
-          >
-            <InfoIcon size={16} /> AM
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <nav>
+    <ul class="flex items-center space-x-4">
+      {
+        mainNav.map((opt) => {
+          const isExternal = opt.href.startsWith("https");
+          return (
+            <div class="col-span-1">
+              <li>
+                <a
+                  href={opt.href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener" : undefined}
+                  class="hover:underline"
+                >
+                  {opt.label}
+                </a>
+              </li>
+            </div>
+          );
+        })
+      }
+      <li>
+        <a href="https://github.com/am25-labs" target="_blank" rel="noopener">
+          <BrandIcon icon={siGithub} size={20} />
+        </a>
+      </li>
+    </ul>
+  </nav>
 </header>

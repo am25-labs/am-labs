@@ -20,6 +20,12 @@ export interface LogoTileProps {
   href?: string;
 }
 
+export interface NavProps {
+  label: string;
+  href: string;
+  icon?: string;
+}
+
 export interface RootLayoutProps {
   title?: string;
 }
