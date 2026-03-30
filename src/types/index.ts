@@ -1,5 +1,9 @@
 import type { SimpleIcon } from "simple-icons";
 
+export interface GridProps {
+  class?: string;
+}
+
 export interface RootLayoutProps {
   title?: string;
 }
