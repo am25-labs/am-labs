@@ -1,0 +1,22 @@
+---
+import { Card, CardContent } from "@/components/ui/card";
+import type { LogoTileProps } from "@/types";
+
+type Props = LogoTileProps;
+
+const { logo, title, href } = Astro.props;
+const Tag = href ? "a" : "div";
+const isExternal = href?.startsWith("https");
+---
+
+<Tag
+  href={href}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noopener" : undefined}
+>
+  <Card className="flex justify-center aspect-square">
+    <CardContent>
+      <img src={logo} alt={title} {title} />
+    </CardContent>
+  </Card>
+</Tag>
