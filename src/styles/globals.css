@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@import "@fontsource/martian-mono/400.css";
+@import "@fontsource/martian-mono/700.css";
+
+@theme {
+  --font-martian: "Martian Mono", monospace;
+}

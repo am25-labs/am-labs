@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/martian-mono':
+        specifier: 5.2.7
+        version: 5.2.7
       '@lucide/astro':
         specifier: 1.7.0
         version: 1.7.0(astro@6.1.1(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1))
@@ -231,6 +234,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/martian-mono@5.2.7':
+    resolution: {integrity: sha512-DU0WVmso0FjwnNf7Z80FhnrF/pCMgNi9ZfHTn1Ws7TM6u00CwV6esjaFkn3blnchn0pRwt63/M/2vfBe6J4mFg==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -1796,6 +1802,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.4':
     optional: true
+
+  '@fontsource/martian-mono@5.2.7': {}
 
   '@img/colour@1.1.0':
     optional: true
