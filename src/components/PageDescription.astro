@@ -1,0 +1,17 @@
+---
+import GridContainer from "@/layouts/GridContainer.astro";
+import GridFour from "@/layouts/grids/GridFour.astro";
+import type { PageDescriptionProps } from "@/types";
+
+type Props = PageDescriptionProps;
+
+const { description } = Astro.props;
+---
+
+<GridContainer>
+  <GridFour>
+    <div class="col-span-2 md:col-span-4">
+      <p class="text-3xl leading-normal">{description}</p>
+    </div>
+  </GridFour>
+</GridContainer>
