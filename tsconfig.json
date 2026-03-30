@@ -3,13 +3,10 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
-    "moduleResolution": "Bundler",
+    "baseUrl": ".",
     "paths": {
-      "@assets/*": ["./public/*"],
-      "@components/*": ["./src/components/*"],
-      "@content/*": ["./src/content/*"],
-      "@layouts/*": ["./src/layouts/*"],
-      "@styles/*": ["./src/styles/*"]
-    }
+      "@/*": ["./src/*"]
+    },
+    "moduleResolution": "Bundler"
   }
 }
