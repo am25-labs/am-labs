@@ -1,0 +1,40 @@
+---
+import GridContainer from "@/layouts/GridContainer.astro";
+import GridTwo from "@/layouts/grids/GridTwo.astro";
+import GridSix from "@/layouts/grids/GridSix.astro";
+import LogoTile from "@/components/LogoTile.astro";
+import type { LogoTileProps } from "@/types";
+
+const repos: LogoTileProps[] = [
+  {
+    logo: "/AmLogo.svg",
+    title: "Gate IdP",
+    href: "/gate-idp",
+  },
+  {
+    logo: "/AmLogo.svg",
+    title: "Web Push Server",
+    href: "https://github.com/am25-labs/web-push-server",
+  },
+];
+---
+
+<GridContainer class="mt-16">
+  <GridTwo>
+    <div class="col-span-2">
+      <h2 class="text-muted-foreground text-sm uppercase">
+        Featured repositories
+      </h2>
+    </div>
+  </GridTwo>
+
+  <GridSix>
+    {
+      repos.map((repo) => (
+        <div class="col-span-1">
+          <LogoTile {...repo} />
+        </div>
+      ))
+    }
+  </GridSix>
+</GridContainer>
