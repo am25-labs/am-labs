@@ -13,10 +13,15 @@ const isExternal = href?.startsWith("https");
   href={href}
   target={isExternal ? "_blank" : undefined}
   rel={isExternal ? "noopener" : undefined}
+  {title}
+  class="group"
 >
   <Card className="flex justify-center aspect-square">
     <CardContent>
-      <img src={logo} alt={title} {title} />
+      <img src={logo} alt={title} />
     </CardContent>
   </Card>
+  <p class="text-muted-foreground text-xs mt-2 group-hover:underline">
+    {title}
+  </p>
 </Tag>
