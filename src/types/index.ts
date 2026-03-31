@@ -44,6 +44,12 @@ export interface LogoTileProps {
   href?: string;
 }
 
+export interface SocNavProps {
+  href: string;
+  icon: SimpleIcon;
+  size?: number;
+}
+
 export interface NavProps {
   label: string;
   href: string;

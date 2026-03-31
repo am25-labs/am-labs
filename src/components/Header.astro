@@ -1,14 +1,22 @@
 ---
-import type { NavProps } from "@/types";
-import { siGithub } from "simple-icons";
+import type { NavProps, SocNavProps } from "@/types";
+import { siGithub, siNpm } from "simple-icons";
 import BrandIcon from "@/components/BrandIcon.astro";
-import { InfoIcon } from "@lucide/astro";
 
 const mainNav: NavProps[] = [
   {
     label: "Home",
     href: "/",
   },
+  {
+    label: "AM",
+    href: "https://alemartir.com/about",
+  },
+];
+
+const socNav: SocNavProps[] = [
+  { href: "https://github.com/am25-labs", icon: siGithub, size: 20 },
+  { href: "https://www.npmjs.com/org/am25", icon: siNpm, size: 20 },
 ];
 ---
 
@@ -45,11 +53,17 @@ const mainNav: NavProps[] = [
           );
         })
       }
-      <li>
-        <a href="https://github.com/am25-labs" target="_blank" rel="noopener">
-          <BrandIcon icon={siGithub} size={20} />
-        </a>
-      </li>
+      {
+        socNav.map((opt) => {
+          return (
+            <li>
+              <a href={opt.href} target="_blank" rel="noopener">
+                <BrandIcon icon={opt.icon} size={opt.size} />
+              </a>
+            </li>
+          );
+        })
+      }
     </ul>
   </nav>
 </header>
