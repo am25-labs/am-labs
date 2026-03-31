@@ -13,9 +13,14 @@ details:
     value: "Internal ecosystem"
   - label: "Features"
     value: "Authorization server, OIDC, SSO"
+license: "Proprietary"
+availability: "Licensed"
+deployment: "Managed by AM25"
+started: "January 2026"
+updated: "March 2026"
+owner:
+  label: "Alejandro Mártir"
+  href: "https://github.com/martirale"
 ---
 
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam
-mollitia autem, aperiam voluptate at vel culpa, veniam, corporis
-deleniti voluptatibus quis cupiditate magnam minus debitis. Suscipit
-enim ut dolores labore?
+Gate IdP is the identity and access layer for the AM25 ecosystem, delivering OAuth2 and OpenID Connect-based authentication and SSO. It is offered as a licensed, managed service, ensuring secure and centralized access across applications.

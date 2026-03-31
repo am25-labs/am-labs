@@ -3,11 +3,33 @@ import GridContainer from "@/layouts/GridContainer.astro";
 import GridTwo from "@/layouts/grids/GridTwo.astro";
 import GridFour from "@/layouts/grids/GridFour.astro";
 import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
+import { Card, CardContent } from "@/components/ui/card";
 import type { ProjectContentProps } from "@/types";
+import {
+  ScaleIcon,
+  PackageIcon,
+  EyeIcon,
+  ServerIcon,
+  CalendarIcon,
+  RefreshCwIcon,
+  UserRoundIcon,
+} from "@lucide/astro";
 
 type Props = ProjectContentProps;
 
-const { title, icon, description, details } = Astro.props;
+const {
+  title,
+  icon,
+  description,
+  details,
+  license,
+  repository,
+  availability,
+  deployment,
+  started,
+  updated,
+  owner,
+} = Astro.props;
 ---
 
 <GridContainer class="mb-16">
@@ -43,4 +65,61 @@ const { title, icon, description, details } = Astro.props;
       </div>
     </div>
   </GridFour>
+
+  <GridTwo>
+    <div class="col-span-2">
+      <Card>
+        <CardContent>
+          <ul class="text-xs space-y-4">
+            <li class="flex items-center gap-2" title="License">
+              <ScaleIcon size={16} class="text-muted-foreground shrink-0" />
+              {license}
+            </li>
+            <li class="flex items-center gap-2" title="Repository">
+              <PackageIcon size={16} class="text-muted-foreground shrink-0" />
+              {
+                repository ? (
+                  <a
+                    href={repository.href}
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:underline"
+                  >
+                    {repository.label}
+                  </a>
+                ) : (
+                  <span>Private</span>
+                )
+              }
+            </li>
+            <li class="flex items-center gap-2" title="Availability">
+              <EyeIcon size={16} class="text-muted-foreground shrink-0" />
+              {availability}
+            </li>
+            <li class="flex items-center gap-2" title="Deployment">
+              <ServerIcon size={16} class="text-muted-foreground shrink-0" />
+              {deployment}
+            </li>
+            <li class="flex items-center gap-2" title="Started">
+              <CalendarIcon size={16} class="text-muted-foreground shrink-0" />
+              {started}
+            </li>
+            <li class="flex items-center gap-2" title="Updated">
+              <RefreshCwIcon size={16} class="text-muted-foreground shrink-0" />
+              {updated}
+            </li>
+            <li class="flex items-center gap-2" title="Owner">
+              <UserRoundIcon size={16} class="text-muted-foreground shrink-0" />
+              <a
+                href={owner.href}
+                target="_blank"
+                rel="noopener"
+                class="hover:underline">{owner.label}</a
+              >
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+    </div>
+  </GridTwo>
 </GridContainer>

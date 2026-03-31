@@ -14,6 +14,19 @@ const projects = defineCollection({
         value: z.string(),
       })
     ),
+    license: z.string(),
+    repository: z.object({
+      label: z.string(),
+      href: z.string(),
+    }).optional(),
+    availability: z.string(),
+    deployment: z.string(),
+    started: z.string(),
+    updated: z.string(),
+    owner: z.object({
+      label: z.string(),
+      href: z.string(),
+    }),
   }),
 });
 

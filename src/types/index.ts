@@ -5,11 +5,23 @@ export interface ProjectDetail {
   value: string;
 }
 
+export interface ProjectLink {
+  label: string;
+  href: string;
+}
+
 export interface ProjectContentProps {
   title: string;
   icon: string;
   description: string;
   details: ProjectDetail[];
+  license: string;
+  repository?: ProjectLink;
+  availability: string;
+  deployment: string;
+  started: string;
+  updated: string;
+  owner: ProjectLink;
 }
 
 export interface PageDescriptionProps {
