@@ -1,5 +1,11 @@
 import type { SimpleIcon } from "simple-icons";
 
+export interface FaqItem {
+  value: string;
+  trigger: string;
+  content: string;
+}
+
 export interface ProjectDetail {
   label: string;
   value: string;
