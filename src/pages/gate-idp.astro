@@ -6,7 +6,7 @@ import ProjectContent from "@/layouts/ProjectContent.astro";
 
 const entry = await getEntry("projects", "gate-idp");
 if (!entry) return new Response(null, { status: 404 });
-const { Content } = await render(entry);
+await render(entry);
 const { title, icon, description, details } = entry.data;
 ---
 
