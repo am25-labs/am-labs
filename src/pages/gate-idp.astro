@@ -5,19 +5,18 @@ import PageDescription from "@/components/PageDescription.astro";
 import ProjectContent from "@/layouts/ProjectContent.astro";
 
 const entry = await getEntry("projects", "gate-idp");
+if (!entry) return new Response(null, { status: 404 });
 const { Content } = await render(entry);
-const { title, icon, details } = entry.data;
+const { title, icon, description, details } = entry.data;
 ---
 
 <RootLayout title={`${title} | AM25 Labs`}>
-  <PageDescription
-    description="AM25 ecosystem IdP/SSO, built on OAuth2 + OIDC standards"
-  />
+  <PageDescription {description} />
 
   <ProjectContent
-    title={title}
-    icon={icon}
+    {title}
+    {icon}
     description={entry.body ?? ""}
-    details={details}
+    {details}
   />
 </RootLayout>

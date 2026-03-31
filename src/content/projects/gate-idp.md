@@ -1,6 +1,7 @@
 ---
 title: "Gate IdP by AM25"
 icon: "/gate-icon.svg"
+description: "AM25 ecosystem IdP/SSO, built on OAuth2 + OIDC standards"
 details:
   - label: "Category"
     value: "Identity, Auth, SSO"
