@@ -36,6 +36,7 @@ export interface PageDescriptionProps {
 
 export interface GridProps {
   class?: string;
+  gap?: string;
 }
 
 export interface BrandIconProps {

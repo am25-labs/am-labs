@@ -3,11 +3,11 @@ import type { GridProps } from "@/types";
 
 type Props = GridProps;
 
-const { class: className } = Astro.props;
+const { class: className, gap = "gap-8" } = Astro.props;
 ---
 
 <section class:list={["col-span-2", className]}>
-  <div class="grid grid-cols-2 gap-8">
+  <div class:list={["grid grid-cols-2", gap]}>
     <slot />
   </div>
 </section>
