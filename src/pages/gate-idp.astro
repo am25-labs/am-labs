@@ -1,11 +1,23 @@
 ---
+import { getEntry, render } from "astro:content";
 import RootLayout from "@/layouts/RootLayout.astro";
 import PageDescription from "@/components/PageDescription.astro";
 import ProjectContent from "@/layouts/ProjectContent.astro";
+
+const entry = await getEntry("projects", "gate-idp");
+const { Content } = await render(entry);
+const { title, icon, details } = entry.data;
 ---
 
-<RootLayout title="Gate IdP | AM25 Labs">
+<RootLayout title={`${title} | AM25 Labs`}>
   <PageDescription
     description="AM25 ecosystem IdP/SSO, built on OAuth2 + OIDC standards"
+  />
+
+  <ProjectContent
+    title={title}
+    icon={icon}
+    description={entry.body ?? ""}
+    details={details}
   />
 </RootLayout>

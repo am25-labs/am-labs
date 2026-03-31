@@ -1,0 +1,46 @@
+---
+import GridContainer from "@/layouts/GridContainer.astro";
+import GridTwo from "@/layouts/grids/GridTwo.astro";
+import GridFour from "@/layouts/grids/GridFour.astro";
+import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
+import type { ProjectContentProps } from "@/types";
+
+type Props = ProjectContentProps;
+
+const { title, icon, description, details } = Astro.props;
+---
+
+<GridContainer class="mb-16">
+  <GridTwo />
+
+  <GridFour>
+    <div class="col-span-2 md:col-span-4">
+      <div class="flex flex-row items-center gap-2 mb-8">
+        <div class="border p-2 aspect-square">
+          <img src={icon} alt={title} class="w-6" />
+        </div>
+
+        <h1 class="text-2xl font-bold">{title}</h1>
+      </div>
+
+      <div class="space-y-8">
+        <p>{description}</p>
+
+        <h3 class="font-bold uppercase pt-8">Details</h3>
+
+        <Table>
+          <TableBody>
+            {
+              details.map((detail) => (
+                <TableRow>
+                  <TableCell className="font-bold">{detail.label}</TableCell>
+                  <TableCell>{detail.value}</TableCell>
+                </TableRow>
+              ))
+            }
+          </TableBody>
+        </Table>
+      </div>
+    </div>
+  </GridFour>
+</GridContainer>

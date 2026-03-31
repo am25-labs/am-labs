@@ -1,5 +1,17 @@
 import type { SimpleIcon } from "simple-icons";
 
+export interface ProjectDetail {
+  label: string;
+  value: string;
+}
+
+export interface ProjectContentProps {
+  title: string;
+  icon: string;
+  description: string;
+  details: ProjectDetail[];
+}
+
 export interface PageDescriptionProps {
   description: string;
 }
