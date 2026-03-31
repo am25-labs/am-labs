@@ -1,6 +1,6 @@
-# AM Labs
+# AM25 Labs
 
-Personal lab and project showcase built with Astro. Catalogs the tools, services, and experiments that make up the AM25 ecosystem.
+Dev lab and project showcase built with Astro. Catalogs the tools, services, and experiments that make up the AM25 ecosystem.
 
 ## Stack
 
@@ -25,11 +25,11 @@ src/
 
 ## Commands
 
-| Command       | Action                                    |
-| :------------ | :---------------------------------------- |
-| `pnpm dev`    | Start dev server at `localhost:4321`      |
-| `pnpm build`  | Build production site to `./dist/`        |
-| `pnpm preview`| Preview production build locally          |
+| Command        | Action                               |
+| :------------- | :----------------------------------- |
+| `pnpm dev`     | Start dev server at `localhost:4321` |
+| `pnpm build`   | Build production site to `./dist/`   |
+| `pnpm preview` | Preview production build locally     |
 
 ## Adding a Project
 
