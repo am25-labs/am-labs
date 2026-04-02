@@ -17,6 +17,18 @@ export interface ProjectLink {
   href: string;
 }
 
+export interface ProjectCtaDialog {
+  title: string;
+  description: string;
+  command: string;
+  managers: string[];
+}
+
+export interface ProjectCta {
+  label: string;
+  dialog: ProjectCtaDialog;
+}
+
 export interface ProjectContentProps {
   title: string;
   icon: string;
@@ -27,6 +39,7 @@ export interface ProjectContentProps {
   started: string;
   updated: string;
   version?: string;
+  cta?: ProjectCta;
 }
 
 export interface PageDescriptionProps {

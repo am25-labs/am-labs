@@ -23,6 +23,15 @@ const projects = defineCollection({
     started: z.string(),
     updated: z.string(),
     version: z.string().optional(),
+    cta: z.object({
+      label: z.string(),
+      dialog: z.object({
+        title: z.string(),
+        description: z.string(),
+        command: z.string(),
+        managers: z.array(z.string()),
+      }),
+    }).optional(),
   }),
 });
 

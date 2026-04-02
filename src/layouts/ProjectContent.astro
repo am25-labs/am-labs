@@ -5,6 +5,7 @@ import GridFour from "@/layouts/grids/GridFour.astro";
 import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { Card, CardContent } from "@/components/ui/card";
 import type { ProjectContentProps } from "@/types";
+import ProjectCtaDialog from "@/components/project/ProjectCtaDialog";
 import {
   PackageIcon,
   ServerIcon,
@@ -26,6 +27,7 @@ const {
   started,
   updated,
   version,
+  cta,
 } = Astro.props;
 ---
 
@@ -79,6 +81,8 @@ const {
 
   <GridTwo>
     <div class="col-span-2">
+      {cta && <ProjectCtaDialog {cta} client:load />}
+
       <Card>
         <CardContent>
           <ul class="text-xs space-y-4">

@@ -26,6 +26,16 @@ deployment: "Self-hosted"
 started: "June 2025"
 updated: "April 2026"
 version: "1.0.2"
+cta:
+  label: "Get started"
+  dialog:
+    title: "Web Push Server"
+    description: "Levanta tu servidor web push usando:"
+    command: "@am25/webpush create-webpush"
+    managers:
+      - "npx"
+      - "pnpm dlx"
+      - "yarn dlx"
 ---
 
 A self-hosted Web Push notification service built with Express and TypeScript. It provides secure VAPID-based delivery and supports sending notifications to individual users or all subscribers. Designed to be standalone and framework-agnostic, it fits seamlessly into any modern stack.
