@@ -32,7 +32,7 @@ documentation:
 cta:
   label: "Get started"
   dialog:
-    title: "Web Push Server"
+    title: "Get started"
     description: "Set up your Web Push server using:"
     command: "@am25/webpush create-webpush"
     managers:
