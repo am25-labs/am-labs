@@ -30,7 +30,7 @@ export default function ProjectCtaDialog({ cta }: Props) {
           {cta.dialog.managers.map((manager) => (
             <code
               key={manager}
-              className="rounded-lg bg-muted px-3 py-2 text-xs font-mono"
+              className="rounded-lg bg-muted px-3 py-2 text-xs"
             >
               {manager} {cta.dialog.command}
             </code>
