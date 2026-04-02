@@ -18,7 +18,7 @@ details:
     href: "https://github.com/martirale"
   - label: "License"
     value: "MIT"
-    href: "https://opensource.org/licenses/MIT"
+    href: "https://github.com/am25-labs/webpush/blob/main/LICENSE"
 repository:
   label: "@am25/webpush"
   href: "https://www.npmjs.com/package/@am25/webpush"
@@ -28,7 +28,7 @@ updated: "April 2026"
 version: "1.0.2"
 documentation:
   label: "README"
-  href: "https://github.com/am25-labs/webpush#readme"
+  href: "https://github.com/am25-labs/webpush/blob/main/README.md"
 cta:
   label: "Get started"
   dialog:
