@@ -9,6 +9,7 @@ export interface FaqItem {
 export interface ProjectDetail {
   label: string;
   value: string;
+  href?: string;
 }
 
 export interface ProjectLink {
@@ -21,13 +22,11 @@ export interface ProjectContentProps {
   icon: string;
   description: string;
   details: ProjectDetail[];
-  license: string;
   repository?: ProjectLink;
-  availability: string;
   deployment: string;
   started: string;
   updated: string;
-  owner: ProjectLink;
+  version?: string;
 }
 
 export interface PageDescriptionProps {
