@@ -39,6 +39,7 @@ export interface ProjectContentProps {
   started: string;
   updated: string;
   version?: string;
+  documentation?: ProjectLink;
   cta?: ProjectCta;
 }
 

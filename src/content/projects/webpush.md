@@ -26,6 +26,9 @@ deployment: "Self-hosted"
 started: "June 2025"
 updated: "April 2026"
 version: "1.0.2"
+documentation:
+  label: "README"
+  href: "https://github.com/am25-labs/webpush#readme"
 cta:
   label: "Get started"
   dialog:

@@ -13,6 +13,7 @@ import {
   RefreshCwIcon,
   TagIcon,
   ArrowUpRightIcon,
+  BookOpenIcon,
 } from "@lucide/astro";
 
 type Props = ProjectContentProps;
@@ -27,6 +28,7 @@ const {
   started,
   updated,
   version,
+  documentation,
   cta,
 } = Astro.props;
 ---
@@ -120,6 +122,21 @@ const {
                 <li class="flex items-center gap-2" title="Version">
                   <TagIcon size={16} class="text-muted-foreground shrink-0" />
                   {version}
+                </li>
+              )
+            }
+            {
+              documentation && (
+                <li class="flex items-center gap-2" title="Documentation">
+                  <BookOpenIcon size={16} class="text-muted-foreground shrink-0" />
+                  <a
+                    href={documentation.href}
+                    target="_blank"
+                    rel="noopener"
+                    class="underline hover:text-am-y"
+                  >
+                    {documentation.label}
+                  </a>
                 </li>
               )
             }

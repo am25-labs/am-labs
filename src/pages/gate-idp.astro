@@ -7,7 +7,7 @@ import ProjectContent from "@/layouts/ProjectContent.astro";
 const entry = await getEntry("projects", "gate-idp");
 if (!entry) return new Response(null, { status: 404 });
 await render(entry);
-const { title, icon, description, details, repository, deployment, started, updated, version, cta } = entry.data;
+const { title, icon, description, details, repository, deployment, started, updated, version, documentation, cta } = entry.data;
 ---
 
 <RootLayout title={`${title} | AM25 Labs`}>
@@ -23,6 +23,7 @@ const { title, icon, description, details, repository, deployment, started, upda
     {started}
     {updated}
     {version}
+    {documentation}
     {cta}
   />
 </RootLayout>
