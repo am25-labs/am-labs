@@ -30,7 +30,7 @@ cta:
   label: "Get started"
   dialog:
     title: "Web Push Server"
-    description: "Levanta tu servidor web push usando:"
+    description: "Set up your Web Push server using:"
     command: "@am25/webpush create-webpush"
     managers:
       - "npx"
