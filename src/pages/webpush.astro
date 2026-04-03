@@ -6,8 +6,20 @@ import ProjectContent from "@/layouts/ProjectContent.astro";
 
 const entry = await getEntry("projects", "webpush");
 if (!entry) return new Response(null, { status: 404 });
-await render(entry);
-const { title, icon, description, details, repository, deployment, started, updated, version, documentation, cta } = entry.data;
+const { Content } = await render(entry);
+const {
+  title,
+  icon,
+  description,
+  details,
+  repository,
+  deployment,
+  started,
+  updated,
+  version,
+  documentation,
+  cta,
+} = entry.data;
 ---
 
 <RootLayout title={`${title} | AM25 Labs`}>
@@ -16,7 +28,6 @@ const { title, icon, description, details, repository, deployment, started, upda
   <ProjectContent
     {title}
     {icon}
-    description={entry.body ?? ""}
     {details}
     {repository}
     {deployment}
@@ -25,5 +36,7 @@ const { title, icon, description, details, repository, deployment, started, upda
     {version}
     {documentation}
     {cta}
-  />
+  >
+    <Content />
+  </ProjectContent>
 </RootLayout>
