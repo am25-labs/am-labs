@@ -2,6 +2,7 @@
 import type { NavProps, SocNavProps } from "@/types";
 import { siGithub, siNpm } from "simple-icons";
 import BrandIcon from "@/components/BrandIcon.astro";
+import MobileMenu from "@/components/MobileMenu";
 
 const mainNav: NavProps[] = [
   {
@@ -28,16 +29,14 @@ const socNav: SocNavProps[] = [
   class="max-w-7xl mx-auto w-full flex items-center justify-between px-4 pt-4 pb-16"
 >
   <a href="/"
-    ><img
-      src="/am25-logo.svg"
-      alt="AM25 Logo"
-      width="100"
-      title="AM25 Labs"
-    /></a
+    ><img src="/am25-logo.svg" alt="AM25 Logo" width="100" title="AM25" /></a
   >
 
-  <nav>
-    <ul class="flex items-center space-x-4">
+  <nav
+    aria-label="Main and social navigation (desktop)"
+    class="hidden md:block"
+  >
+    <ul class="flex items-center space-x-6">
       {
         mainNav.map((opt) => {
           const isExternal = opt.href.startsWith("https");
@@ -68,4 +67,8 @@ const socNav: SocNavProps[] = [
       }
     </ul>
   </nav>
+
+  <div class="md:hidden">
+    <MobileMenu items={mainNav} socItems={socNav} client:load />
+  </div>
 </header>
