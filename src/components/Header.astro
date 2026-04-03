@@ -38,18 +38,16 @@ const socNav: SocNavProps[] = [
         mainNav.map((opt) => {
           const isExternal = opt.href.startsWith("https");
           return (
-            <div class="col-span-1">
-              <li>
-                <a
-                  href={opt.href}
-                  target={isExternal ? "_blank" : undefined}
-                  rel={isExternal ? "noopener" : undefined}
-                  class="hover:underline"
-                >
-                  {opt.label}
-                </a>
-              </li>
-            </div>
+            <li>
+              <a
+                href={opt.href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener" : undefined}
+                class="hover:underline"
+              >
+                {opt.label}
+              </a>
+            </li>
           );
         })
       }
