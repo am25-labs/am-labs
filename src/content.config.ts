@@ -13,30 +13,44 @@ const projects = defineCollection({
         label: z.string(),
         value: z.string(),
         href: z.string().optional(),
-      })
+      }),
     ),
-    repository: z.object({
-      label: z.string(),
-      href: z.string(),
-    }).optional(),
+    repository: z
+      .object({
+        label: z.string(),
+        href: z.string(),
+      })
+      .optional(),
     deployment: z.string(),
     started: z.string(),
     updated: z.string(),
     version: z.string().optional(),
-    documentation: z.object({
-      label: z.string(),
-      href: z.string(),
-    }).optional(),
-    cta: z.object({
-      label: z.string(),
-      dialog: z.object({
-        title: z.string(),
-        description: z.string(),
-        command: z.string(),
-        managers: z.array(z.string()),
-      }),
-    }).optional(),
+    documentation: z
+      .object({
+        label: z.string(),
+        href: z.string(),
+      })
+      .optional(),
+    cta: z
+      .object({
+        label: z.string(),
+        dialog: z.object({
+          title: z.string(),
+          description: z.string(),
+          command: z.string(),
+          managers: z.array(z.string()),
+        }),
+      })
+      .optional(),
   }),
 });
 
-export const collections = { projects };
+const pages = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/pages" }),
+  schema: z.object({
+    title: z.string(),
+    updated: z.string(),
+  }),
+});
+
+export const collections = { projects, pages };
