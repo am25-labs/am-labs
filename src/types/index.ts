@@ -1,6 +1,6 @@
 import type { SimpleIcon } from "simple-icons";
 
-export interface FaqItem {
+export interface AccordionWrapItem {
   value: string;
   trigger: string;
   content: string;
