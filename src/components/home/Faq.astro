@@ -3,9 +3,9 @@ import GridContainer from "@/layouts/GridContainer.astro";
 import GridTwo from "@/layouts/grids/GridTwo.astro";
 import GridFour from "@/layouts/grids/GridFour.astro";
 import { AccordionWrap } from "@/components/ui/custom/Accordion";
-import type { FaqItem } from "@/types";
+import type { AccordionWrapItem } from "@/types";
 
-const faq: FaqItem[] = [
+const faq: AccordionWrapItem[] = [
   {
     value: "item-1",
     trigger: "What is AM25 Labs?",
@@ -39,9 +39,9 @@ const faq: FaqItem[] = [
 ];
 ---
 
-<GridContainer class="py-16">
+<GridContainer class="pb-16">
   <GridTwo>
-    <div class="col-span-2">
+    <div class="col-span-full">
       <h2 class="text-muted-foreground text-sm font-bold uppercase">
         Frequently Asked Questions
       </h2>
@@ -49,7 +49,7 @@ const faq: FaqItem[] = [
   </GridTwo>
 
   <GridFour>
-    <div class="col-span-2 md:col-span-4">
+    <div class="col-span-full">
       <AccordionWrap items={faq} client:load />
     </div>
   </GridFour>
