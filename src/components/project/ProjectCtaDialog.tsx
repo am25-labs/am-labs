@@ -17,7 +17,7 @@ export default function ProjectCtaDialog({ cta }: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="rounded-full w-full mb-4 cursor-pointer" size="lg">
+        <Button className="rounded-full w-full mt-16 mb-4 md:mt-0 cursor-pointer" size="lg">
           {cta.label}
         </Button>
       </DialogTrigger>
