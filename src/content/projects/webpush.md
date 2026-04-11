@@ -10,7 +10,7 @@ details:
   - label: "Availability"
     value: "Public"
   - label: "Stack"
-    value: "Node.js, Express, TypeScript, Web Push (VAPID)"
+    value: "Express, TypeScript, Web Push (VAPID)"
   - label: "Scope"
     value: "Public, open-source, self-hosted"
   - label: "Owner"
