@@ -14,6 +14,20 @@ interface Props {
 }
 
 export default function ProjectCtaDialog({ cta }: Props) {
+  if (cta.type === "link") {
+    return (
+      <Button
+        className="rounded-full w-full mt-16 mb-4 md:mt-0 cursor-pointer"
+        size="lg"
+        asChild
+      >
+        <a href={cta.href} target="_blank" rel="noopener">
+          {cta.label}
+        </a>
+      </Button>
+    );
+  }
+
   return (
     <Dialog>
       <DialogTrigger asChild>

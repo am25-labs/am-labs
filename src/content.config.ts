@@ -32,15 +32,23 @@ const projects = defineCollection({
       })
       .optional(),
     cta: z
-      .object({
-        label: z.string(),
-        dialog: z.object({
-          title: z.string(),
-          description: z.string(),
-          command: z.string(),
-          managers: z.array(z.string()),
+      .discriminatedUnion("type", [
+        z.object({
+          label: z.string(),
+          type: z.literal("dialog"),
+          dialog: z.object({
+            title: z.string(),
+            description: z.string(),
+            command: z.string(),
+            managers: z.array(z.string()),
+          }),
         }),
-      })
+        z.object({
+          label: z.string(),
+          type: z.literal("link"),
+          href: z.string(),
+        }),
+      ])
       .optional(),
   }),
 });

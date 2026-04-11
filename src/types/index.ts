@@ -24,10 +24,9 @@ export interface ProjectCtaDialog {
   managers: string[];
 }
 
-export interface ProjectCta {
-  label: string;
-  dialog: ProjectCtaDialog;
-}
+export type ProjectCta =
+  | { label: string; type: "dialog"; dialog: ProjectCtaDialog }
+  | { label: string; type: "link"; href: string };
 
 export interface ProjectContentProps {
   title: string;

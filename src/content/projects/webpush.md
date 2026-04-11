@@ -31,6 +31,7 @@ documentation:
   href: "https://github.com/am25-labs/webpush/blob/main/README.md"
 cta:
   label: "Get started"
+  type: dialog
   dialog:
     title: "Get started"
     description: "Set up your Web Push server using:"
