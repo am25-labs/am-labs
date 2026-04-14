@@ -24,11 +24,11 @@ repository:
 deployment: "Managed by AM25"
 started: "April 2026"
 updated: "April 2026"
-version: "0.1.4"
+version: "0.3.0"
 cta:
   label: "Install now"
   type: link
   href: "https://okrapk.app"
 ---
 
-OKRA is an open-core global color picker for Windows. Capture any color from anywhere on your screen, instantly get HEX, RGB, and HSL values, and sync your color library across your design tools. Built with Tauri and React.
+OKRA is an open-core global color picker for Windows and macOS. Capture any color from anywhere on your screen, instantly get HEX, RGB, and HSL values, and sync your color library across your design tools. Built with Tauri and React.
