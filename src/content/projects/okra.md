@@ -1,7 +1,7 @@
 ---
 title: "OKRA"
 icon: "/okra-icon.svg"
-description: "Global color picker for Windows — built for designers"
+description: "Global color picker for macOS and Windows — built for designers"
 details:
   - label: "Category"
     value: "Color Picker, Library"
@@ -12,7 +12,7 @@ details:
   - label: "Stack"
     value: "Tauri, React, Next.js, Express, PostgreSQL"
   - label: "Scope"
-    value: "Public, open-core, Windows"
+    value: "Public, open-core, macOS, Windows"
   - label: "Owner"
     value: "Alejandro Mártir"
     href: "https://github.com/martirale"
@@ -28,7 +28,7 @@ version: "0.5.0"
 cta:
   label: "Install now"
   type: link
-  href: "https://okrapk.app"
+  href: "https://okrapk.app/downloads"
 ---
 
-OKRA is an open-core global color picker for macOS and Windows. Capture any color from anywhere on your screen, instantly get HEX, RGB, and HSL values, and sync your color library across your design tools. Built with Tauri and React.
+OKRA is an open-core global color picker for macOS and Windows. Capture any color from anywhere on your screen, instantly get HEX, RGB, HSL, and CSS values, and sync your color library across your design tools. Built with Tauri and React.
