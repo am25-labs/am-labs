@@ -24,7 +24,7 @@ repository:
 deployment: "Local Install"
 started: "April 2026"
 updated: "April 2026"
-version: "0.5.0"
+version: "0.7.1"
 cta:
   label: "Install now"
   type: link
