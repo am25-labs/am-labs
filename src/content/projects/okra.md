@@ -19,7 +19,7 @@ details:
   - label: "License"
     value: "MIT (Core), Proprietary (Extensions)"
 repository:
-  label: "okrapk"
+  label: "am25-labs/okrapk"
   href: "https://github.com/am25-labs/okrapk.git"
 deployment: "Local Install"
 started: "April 2026"
