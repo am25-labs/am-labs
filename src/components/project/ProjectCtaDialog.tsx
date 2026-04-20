@@ -17,7 +17,7 @@ export default function ProjectCtaDialog({ cta }: Props) {
   if (cta.type === "link") {
     return (
       <Button
-        className="rounded-full w-full mt-16 mb-4 md:mt-0 cursor-pointer"
+        className="rounded-full w-full mt-16 mb-4 md:mt-0 cursor-pointer group-data-[variant=yellow]:bg-black group-data-[variant=light]:bg-black group-data-[variant=yellow]:text-am-y group-data-[variant=light]:text-white group-data-[variant=yellow]:hover:bg-black/80 group-data-[variant=light]:hover:bg-black/80"
         size="lg"
         asChild
       >
@@ -31,7 +31,10 @@ export default function ProjectCtaDialog({ cta }: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="rounded-full w-full mt-16 mb-4 md:mt-0 cursor-pointer" size="lg">
+        <Button
+          className="rounded-full w-full mt-16 mb-4 md:mt-0 cursor-pointer group-data-[variant=yellow]:bg-black group-data-[variant=light]:bg-black group-data-[variant=yellow]:text-am-y group-data-[variant=light]:text-white group-data-[variant=yellow]:hover:bg-black/80 group-data-[variant=light]:hover:bg-black/80"
+          size="lg"
+        >
           {cta.label}
         </Button>
       </DialogTrigger>

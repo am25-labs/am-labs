@@ -40,7 +40,11 @@ const {
     <div class="col-span-full">
       <div class="flex flex-row items-center gap-4 mb-8">
         <div class="border p-2 aspect-square">
-          <img src={icon} alt={title} class="w-6" />
+          <img
+            src={icon}
+            alt={title}
+            class="w-6 group-data-[variant=yellow]:brightness-0 group-data-[variant=light]:brightness-0"
+          />
         </div>
 
         <h1 class="text-2xl font-bold">{title}</h1>
@@ -57,7 +61,7 @@ const {
           <TableBody>
             {
               details.map((detail) => (
-                <TableRow>
+                <TableRow className="group-data-[variant=yellow]:hover:bg-muted/10 group-data-[variant=light]:hover:bg-muted/10">
                   <TableCell className="font-bold">{detail.label}</TableCell>
                   <TableCell>
                     {detail.href ? (
@@ -71,7 +75,7 @@ const {
                           {detail.value}
                           <ArrowUpRightIcon
                             size={20}
-                            class="text-am-y shrink-0"
+                            class="text-am-y group-data-[variant=yellow]:text-black group-data-[variant=light]:text-black shrink-0"
                           />
                         </a>
                       </span>
@@ -92,18 +96,23 @@ const {
     <div class="col-span-full">
       {cta && <ProjectCtaDialog {cta} client:load />}
 
-      <Card>
+      <Card
+        class="group-data-[variant=yellow]:text-black group-data-[variant=light]:text-black"
+      >
         <div slot="content">
           <ul class="text-xs space-y-4">
             <li class="flex items-center gap-2" title="Repository">
-              <PackageIcon size={16} class="text-muted-foreground shrink-0" />
+              <PackageIcon
+                size={16}
+                class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
+              />
               {
                 repository ? (
                   <a
                     href={repository.href}
                     target="_blank"
                     rel="noopener"
-                    class="underline hover:text-am-y"
+                    class="underline hover:text-am-y group-data-[variant=yellow]:hover:text-black group-data-[variant=light]:hover:text-black"
                   >
                     {repository.label}
                   </a>
@@ -113,21 +122,33 @@ const {
               }
             </li>
             <li class="flex items-center gap-2" title="Deployment">
-              <ServerIcon size={16} class="text-muted-foreground shrink-0" />
+              <ServerIcon
+                size={16}
+                class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
+              />
               {deployment}
             </li>
             <li class="flex items-center gap-2" title="Started">
-              <CalendarIcon size={16} class="text-muted-foreground shrink-0" />
+              <CalendarIcon
+                size={16}
+                class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
+              />
               {started}
             </li>
             <li class="flex items-center gap-2" title="Updated">
-              <RefreshCwIcon size={16} class="text-muted-foreground shrink-0" />
+              <RefreshCwIcon
+                size={16}
+                class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
+              />
               {updated}
             </li>
             {
               version && (
                 <li class="flex items-center gap-2" title="Version">
-                  <TagIcon size={16} class="text-muted-foreground shrink-0" />
+                  <TagIcon
+                    size={16}
+                    class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
+                  />
                   {version}
                 </li>
               )
@@ -137,13 +158,13 @@ const {
                 <li class="flex items-center gap-2" title="Documentation">
                   <BookOpenIcon
                     size={16}
-                    class="text-muted-foreground shrink-0"
+                    class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
                   />
                   <a
                     href={documentation.href}
                     target="_blank"
                     rel="noopener"
-                    class="underline hover:text-am-y"
+                    class="underline hover:text-am-y group-data-[variant=yellow]:hover:text-black group-data-[variant=light]:hover:text-black"
                   >
                     {documentation.label}
                   </a>

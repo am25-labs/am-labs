@@ -43,6 +43,7 @@ export interface ProjectContentProps {
 
 export interface PageDescriptionProps {
   description: string;
+  variant?: "default" | "display";
 }
 
 export interface GridProps {
@@ -76,4 +77,5 @@ export interface NavProps {
 
 export interface RootLayoutProps {
   title?: string;
+  variant?: "default" | "yellow" | "light";
 }
