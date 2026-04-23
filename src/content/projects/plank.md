@@ -1,6 +1,6 @@
 ---
 title: "Plank CMS"
-icon: "/placeholder-icon.svg"
+icon: "/plank-icon.svg"
 description: "Plank is an API-first CMS for structured content without the overhead"
 details:
   - label: "Category"
