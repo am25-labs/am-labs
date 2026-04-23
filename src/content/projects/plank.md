@@ -19,8 +19,8 @@ details:
   - label: "License"
     value: "MIT (Core), Proprietary (Extensions)"
 repository:
-  label: "am25-labs/plank-cms"
-  href: "https://github.com/am25-labs/plank-cms.git"
+  label: "@am25/plank-cms"
+  href: "https://www.npmjs.com/package/@am25/plank-cms"
 deployment: "Self-hosted"
 started: "April 2026"
 updated: "April 2026"
