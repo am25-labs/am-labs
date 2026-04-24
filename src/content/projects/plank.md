@@ -1,7 +1,7 @@
 ---
 title: "Plank CMS"
 icon: "/plank-icon.svg"
-description: "Plank is an API-first CMS for structured content without the overhead"
+description: "A self-hosted headless CMS you can deploy in minutes, built on Node.js and PostgreSQL"
 details:
   - label: "Category"
     value: "Content Management System (CMS)"
@@ -24,7 +24,16 @@ repository:
 deployment: "Self-hosted"
 started: "April 2026"
 updated: "April 2026"
-version: "0.1.0"
+version: "0.1.9"
+cta:
+  label: "Get started"
+  type: dialog
+  dialog:
+    title: "Get started"
+    description: "Set up your Plank CMS using:"
+    command: "@am25/plank-cms init ."
+    managers:
+      - "npx"
 ---
 
 Plank is an API-first CMS built for structured content, running as a standalone server with a modern admin interface. It replaces rigid page models with real database structure, giving you control, performance, and simplicity without the usual overhead.
