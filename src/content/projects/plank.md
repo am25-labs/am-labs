@@ -24,7 +24,7 @@ repository:
 deployment: "Self-hosted"
 started: "April 2026"
 updated: "April 2026"
-version: "0.1.9"
+version: "0.3.0"
 cta:
   label: "Get started"
   type: dialog
