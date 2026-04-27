@@ -1,33 +1,18 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import type { ProjectCta } from "@/types";
+import { ProseRenderer } from "@/components/ProseRenderer";
 
 interface Props {
-  cta: ProjectCta;
+  get_started: string;
 }
 
-export default function ProjectCtaDialog({ cta }: Props) {
-  if (cta.type === "link") {
-    return (
-      <Button
-        className="rounded-full w-full mt-16 mb-4 md:mt-0 cursor-pointer group-data-[variant=yellow]:bg-black group-data-[variant=light]:bg-black group-data-[variant=yellow]:text-am-y group-data-[variant=light]:text-white group-data-[variant=yellow]:hover:bg-black/80 group-data-[variant=light]:hover:bg-black/80"
-        size="lg"
-        asChild
-      >
-        <a href={cta.href} target="_blank" rel="noopener">
-          {cta.label}
-        </a>
-      </Button>
-    );
-  }
-
+export default function ProjectCtaDialog({ get_started }: Props) {
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -35,24 +20,14 @@ export default function ProjectCtaDialog({ cta }: Props) {
           className="rounded-full w-full mt-16 mb-4 md:mt-0 cursor-pointer group-data-[variant=yellow]:bg-black group-data-[variant=light]:bg-black group-data-[variant=yellow]:text-am-y group-data-[variant=light]:text-white group-data-[variant=yellow]:hover:bg-black/80 group-data-[variant=light]:hover:bg-black/80"
           size="lg"
         >
-          {cta.label}
+          Get Started
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{cta.dialog.title}</DialogTitle>
-          <DialogDescription>{cta.dialog.description}</DialogDescription>
+          <DialogTitle className="font-bold uppercase">Get Started</DialogTitle>
         </DialogHeader>
-        <div className="flex flex-col gap-2">
-          {cta.dialog.managers.map((manager) => (
-            <code
-              key={manager}
-              className="rounded-lg bg-muted px-3 py-2 text-xs"
-            >
-              {manager} {cta.dialog.command}
-            </code>
-          ))}
-        </div>
+        <ProseRenderer content={get_started} />
       </DialogContent>
     </Dialog>
   );

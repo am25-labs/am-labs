@@ -3,13 +3,13 @@ import RootLayout from "@/layouts/RootLayout.astro";
 import PageDescription from "@/components/PageDescription.astro";
 import FeaturedProjects from "@/components/home/FeaturedProjects.astro";
 import Faq from "@/components/home/Faq.astro";
+import { getHome } from "@/lib/plank/fetch";
+
+const { quote, faq } = await getHome();
 ---
 
 <RootLayout title="AM25 Labs">
-  <PageDescription
-    description="Playground for software experiments."
-    variant="display"
-  />
+  <PageDescription description={quote} variant="display" />
   <FeaturedProjects />
-  <Faq />
+  <Faq faq={faq} />
 </RootLayout>

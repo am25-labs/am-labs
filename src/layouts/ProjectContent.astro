@@ -2,7 +2,7 @@
 import GridContainer from "@/layouts/GridContainer.astro";
 import GridTwo from "@/layouts/grids/GridTwo.astro";
 import GridFour from "@/layouts/grids/GridFour.astro";
-import ProseContent from "@/components/ProseContent.astro";
+import { ProseRenderer } from "@/components/ProseRenderer";
 import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 import Card from "@/components/ui/astro/Card.astro";
 import type { ProjectContentProps } from "@/types";
@@ -13,24 +13,21 @@ import {
   CalendarIcon,
   RefreshCwIcon,
   TagIcon,
-  ArrowUpRightIcon,
   BookOpenIcon,
 } from "@lucide/astro";
 
 type Props = ProjectContentProps;
 
-const {
-  title,
-  icon,
-  details,
-  repository,
-  deployment,
-  started,
-  updated,
-  version,
-  documentation,
-  cta,
-} = Astro.props;
+const { title, icon, description, details, meta, get_started } = Astro.props;
+
+const metaIconMap: Record<string, any> = {
+  Repository: PackageIcon,
+  Deployment: ServerIcon,
+  Started: CalendarIcon,
+  Updated: RefreshCwIcon,
+  Version: TagIcon,
+  Documentation: BookOpenIcon,
+};
 ---
 
 <GridContainer class="mb-16">
@@ -51,37 +48,20 @@ const {
       </div>
 
       <div class="space-y-8">
-        <ProseContent>
-          <slot />
-        </ProseContent>
-
-        <h3 class="font-bold uppercase pt-8">Details</h3>
+        <ProseRenderer content={description} />
 
         <Table>
           <TableBody>
             {
               details.map((detail) => (
                 <TableRow className="group-data-[variant=yellow]:hover:bg-muted/10 group-data-[variant=light]:hover:bg-muted/10">
-                  <TableCell className="font-bold">{detail.label}</TableCell>
+                  <TableCell className="font-bold w-1/3 align-top">
+                    {detail.label}
+                  </TableCell>
                   <TableCell>
-                    {detail.href ? (
-                      <span class="flex items-center">
-                        <a
-                          href={detail.href}
-                          target="_blank"
-                          rel="noopener"
-                          class="flex items-center hover:font-bold"
-                        >
-                          {detail.value}
-                          <ArrowUpRightIcon
-                            size={20}
-                            class="text-am-y group-data-[variant=yellow]:text-black group-data-[variant=light]:text-black shrink-0"
-                          />
-                        </a>
-                      </span>
-                    ) : (
-                      detail.value
-                    )}
+                    <div class="[&_p]:pb-0 [&_p]:leading-none">
+                      <ProseRenderer content={detail.content} />
+                    </div>
                   </TableCell>
                 </TableRow>
               ))
@@ -94,82 +74,30 @@ const {
 
   <GridTwo>
     <div class="col-span-full">
-      {cta && <ProjectCtaDialog {cta} client:load />}
+      {get_started && <ProjectCtaDialog {get_started} client:load />}
 
       <Card
         class="group-data-[variant=yellow]:text-black group-data-[variant=light]:text-black"
       >
         <div slot="content">
-          <ul class="text-xs space-y-4">
-            <li class="flex items-center gap-2" title="Repository">
-              <PackageIcon
-                size={16}
-                class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
-              />
-              {
-                repository ? (
-                  <a
-                    href={repository.href}
-                    target="_blank"
-                    rel="noopener"
-                    class="underline hover:text-am-y group-data-[variant=yellow]:hover:text-black group-data-[variant=light]:hover:text-black"
-                  >
-                    {repository.label}
-                  </a>
-                ) : (
-                  <span>Private</span>
-                )
-              }
-            </li>
-            <li class="flex items-center gap-2" title="Deployment">
-              <ServerIcon
-                size={16}
-                class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
-              />
-              {deployment}
-            </li>
-            <li class="flex items-center gap-2" title="Started">
-              <CalendarIcon
-                size={16}
-                class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
-              />
-              {started}
-            </li>
-            <li class="flex items-center gap-2" title="Updated">
-              <RefreshCwIcon
-                size={16}
-                class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
-              />
-              {updated}
-            </li>
+          <ul class="space-y-4">
             {
-              version && (
-                <li class="flex items-center gap-2" title="Version">
-                  <TagIcon
-                    size={16}
-                    class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
-                  />
-                  {version}
-                </li>
-              )
-            }
-            {
-              documentation && (
-                <li class="flex items-center gap-2" title="Documentation">
-                  <BookOpenIcon
-                    size={16}
-                    class="text-muted-foreground group-data-[variant=yellow]:text-black shrink-0"
-                  />
-                  <a
-                    href={documentation.href}
-                    target="_blank"
-                    rel="noopener"
-                    class="underline hover:text-am-y group-data-[variant=yellow]:hover:text-black group-data-[variant=light]:hover:text-black"
-                  >
-                    {documentation.label}
-                  </a>
-                </li>
-              )
+              meta.map((item) => {
+                const Icon = metaIconMap[item.label];
+                return (
+                  <li class="flex items-center gap-2" title={item.label}>
+                    {Icon && (
+                      <Icon
+                        size={16}
+                        class="text-muted-foreground group-data-[variant=yellow]:text-black group-data-[variant=light]:text-black shrink-0"
+                      />
+                    )}
+                    <div class="[&_p]:pb-0 [&_p]:leading-none">
+                      <ProseRenderer content={item.content} />
+                    </div>
+                  </li>
+                );
+              })
             }
           </ul>
         </div>

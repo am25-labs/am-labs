@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@am25/plank-client':
+        specifier: 0.1.0
+        version: 0.1.0
+      '@am25/plank-react-renderer':
+        specifier: 0.3.0
+        version: 0.3.0(react@19.2.4)
       '@astrojs/react':
         specifier: 5.0.2
         version: 5.0.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(jiti@2.6.1)(lightningcss@1.32.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -82,6 +88,14 @@ importers:
         version: 4.3.6
 
 packages:
+
+  '@am25/plank-client@0.1.0':
+    resolution: {integrity: sha512-sMnDaIqjmmrXx4xfrJD5AczaEv6KZcsp7tReWbYONzuCBbVWrT1dANfFc3HIhaCV8kg2urdHGQjg0YOWsU4p0A==}
+
+  '@am25/plank-react-renderer@0.3.0':
+    resolution: {integrity: sha512-aKSoc5+pqb7lj4nMVljGzQjfGRoMzJxZ9etAXgA3f5YaxNht5jlLPxzXoYKAnZYp9FUP9+2VrIKmdDV8xjqqug==}
+    peerDependencies:
+      react: '>=18'
 
   '@astrojs/compiler@3.0.1':
     resolution: {integrity: sha512-z97oYbdebO5aoWzuJ/8q5hLK232+17KcLZ7cJ8BCWk6+qNzVxn/gftC0KzMBUTD8WAaBkPpNSQK6PXLnNrZ0CA==}
@@ -3804,6 +3818,12 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@am25/plank-client@0.1.0': {}
+
+  '@am25/plank-react-renderer@0.3.0(react@19.2.4)':
+    dependencies:
+      react: 19.2.4
 
   '@astrojs/compiler@3.0.1': {}
 

@@ -1,0 +1,30 @@
+---
+import RootLayout from "@/layouts/RootLayout.astro";
+import PageDescription from "@/components/PageDescription.astro";
+import ProjectContent from "@/layouts/ProjectContent.astro";
+import { getProjects, getSingleProject } from "@/lib/plank/fetch";
+
+export async function getStaticPaths() {
+  const { data: projects } = await getProjects();
+  return projects.map((proj) => ({
+    params: { slug: proj.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const proj = await getSingleProject(slug!);
+if (!proj) return Astro.redirect("/");
+---
+
+<RootLayout title={`${proj.title} | AM25 Labs`}>
+  <PageDescription description={proj.quote} />
+
+  <ProjectContent
+    title={proj.title}
+    icon={proj.icon}
+    description={proj.description}
+    details={proj.details}
+    meta={proj.meta}
+    get_started={proj.get_started}
+  />
+</RootLayout>

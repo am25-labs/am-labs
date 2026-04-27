@@ -1,44 +1,22 @@
 import type { SimpleIcon } from "simple-icons";
+import type { ProjectItem } from "./content";
+
+export type { PlankListResponse, PlankParams } from "@am25/plank-client";
+export type { ProjectItem, Project, Home } from "./content";
 
 export interface AccordionWrapItem {
   value: string;
-  trigger: string;
+  label: string;
   content: string;
 }
 
-export interface ProjectDetail {
-  label: string;
-  value: string;
-  href?: string;
-}
-
-export interface ProjectLink {
-  label: string;
-  href: string;
-}
-
-export interface ProjectCtaDialog {
-  title: string;
-  description: string;
-  command: string;
-  managers: string[];
-}
-
-export type ProjectCta =
-  | { label: string; type: "dialog"; dialog: ProjectCtaDialog }
-  | { label: string; type: "link"; href: string };
-
 export interface ProjectContentProps {
   title: string;
-  icon: string;
-  details: ProjectDetail[];
-  repository?: ProjectLink;
-  deployment: string;
-  started: string;
-  updated: string;
-  version?: string;
-  documentation?: ProjectLink;
-  cta?: ProjectCta;
+  icon: string | null;
+  description: string;
+  details: ProjectItem[];
+  meta: ProjectItem[];
+  get_started: string | null;
 }
 
 export interface PageDescriptionProps {

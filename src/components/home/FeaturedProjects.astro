@@ -3,30 +3,10 @@ import GridContainer from "@/layouts/GridContainer.astro";
 import GridTwo from "@/layouts/grids/GridTwo.astro";
 import GridSix from "@/layouts/grids/GridSix.astro";
 import LogoTile from "@/components/LogoTile.astro";
-import type { LogoTileProps } from "@/types";
+import { getProjects } from "@/lib/plank/fetch";
 
-const repos: LogoTileProps[] = [
-  {
-    logo: "/plank-icon.svg",
-    title: "Plank CMS",
-    href: "/project/plank",
-  },
-  {
-    logo: "/okra-icon.svg",
-    title: "OKRA",
-    href: "/project/okra",
-  },
-  {
-    logo: "/webpush-icon.svg",
-    title: "Web Push Server",
-    href: "/project/webpush",
-  },
-  {
-    logo: "/gate-icon.svg",
-    title: "Gate IdP",
-    href: "/project/gate-idp",
-  },
-];
+const { data } = await getProjects({ onlyFeatured: true });
+const projects = data.slice(0, 6);
 ---
 
 <GridContainer class="pb-24">
@@ -42,9 +22,13 @@ const repos: LogoTileProps[] = [
 
   <GridSix gap="gap-4">
     {
-      repos.map((repo) => (
+      projects.map((proj) => (
         <div class="col-span-1">
-          <LogoTile {...repo} />
+          <LogoTile
+            logo={proj.icon ?? ""}
+            title={proj.title}
+            href={`/p/${proj.slug}`}
+          />
         </div>
       ))
     }
