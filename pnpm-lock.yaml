@@ -12,8 +12,8 @@ importers:
         specifier: 0.1.0
         version: 0.1.0
       '@am25/plank-react-renderer':
-        specifier: 0.4.4
-        version: 0.4.4(react@19.2.4)
+        specifier: 0.5.0
+        version: 0.5.0(react@19.2.4)
       '@astrojs/react':
         specifier: 5.0.2
         version: 5.0.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(jiti@2.6.1)(lightningcss@1.32.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -92,8 +92,8 @@ packages:
   '@am25/plank-client@0.1.0':
     resolution: {integrity: sha512-sMnDaIqjmmrXx4xfrJD5AczaEv6KZcsp7tReWbYONzuCBbVWrT1dANfFc3HIhaCV8kg2urdHGQjg0YOWsU4p0A==}
 
-  '@am25/plank-react-renderer@0.4.4':
-    resolution: {integrity: sha512-aCkytanzhEPvJ5ATrCafpzHlqTvS1GTV6jiVhDAFiQKjvfm2PHrxlkALfLKqmYlT34ph4bcjypRRWcoDnQ3aew==}
+  '@am25/plank-react-renderer@0.5.0':
+    resolution: {integrity: sha512-so5++TjtLv+IVlPX74hwSa+k94VIrgpuYlUOdouOJdWHUWNnbFLtq+xmCiHrUFLCr+k7Px1JeqJezR7+27HSNw==}
     peerDependencies:
       react: '>=18'
 
@@ -3821,7 +3821,7 @@ snapshots:
 
   '@am25/plank-client@0.1.0': {}
 
-  '@am25/plank-react-renderer@0.4.4(react@19.2.4)':
+  '@am25/plank-react-renderer@0.5.0(react@19.2.4)':
     dependencies:
       react: 19.2.4
 

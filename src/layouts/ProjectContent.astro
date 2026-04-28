@@ -59,9 +59,7 @@ const metaIconMap: Record<string, any> = {
                     {detail.label}
                   </TableCell>
                   <TableCell>
-                    <div class="[&_p]:pb-0 [&_p]:leading-none">
-                      <ProseRenderer content={detail.content} />
-                    </div>
+                    <ProseRenderer content={detail.content} />
                   </TableCell>
                 </TableRow>
               ))
@@ -92,9 +90,8 @@ const metaIconMap: Record<string, any> = {
                         class="text-muted-foreground group-data-[variant=yellow]:text-black group-data-[variant=light]:text-black shrink-0"
                       />
                     )}
-                    <div class="[&_p]:pb-0 [&_p]:leading-none">
-                      <ProseRenderer content={item.content} />
-                    </div>
+
+                    <ProseRenderer content={item.content} />
                   </li>
                 );
               })
