@@ -55,5 +55,8 @@ export interface NavProps {
 
 export interface RootLayoutProps {
   title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
   variant?: "default" | "yellow" | "light";
 }

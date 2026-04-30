@@ -16,7 +16,12 @@ const proj = await getSingleProject(slug!);
 if (!proj) return Astro.redirect("/");
 ---
 
-<RootLayout title={`${proj.title} | AM25 Labs`}>
+<RootLayout
+  title={`${proj.title} - AM25 Labs`}
+  description={proj.description}
+  image="https://labs.am25.work/og-image.png"
+  url={`https://labs.am25.work/p/${slug}`}
+>
   <PageDescription description={proj.quote} />
 
   <ProjectContent

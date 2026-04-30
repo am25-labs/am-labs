@@ -8,7 +8,12 @@ import { getHome } from "@/lib/plank/fetch";
 const { quote, faq } = await getHome();
 ---
 
-<RootLayout title="AM25 Labs">
+<RootLayout
+  title="AM25 Labs"
+  description="Playground for software experiments."
+  image="https://labs.am25.work/og-image.png"
+  url="https://labs.am25.work"
+>
   <PageDescription description={quote} variant="display" />
   <FeaturedProjects />
   <Faq faq={faq} />
