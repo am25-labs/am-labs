@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { PlankRenderer } from "@am25/plank-react-renderer";
-import type { NodeComponents, TiptapDoc } from "@am25/plank-react-renderer";
+import type { NodeComponents } from "@am25/plank-react-renderer";
 import { ArrowUpRightIcon } from "lucide-react";
 
 interface Props {
@@ -15,24 +15,6 @@ interface Props {
 }
 
 const components: NodeComponents = {
-  heading: ({ level, children }) => {
-    const Tag = `h${level}` as "h1" | "h2" | "h3";
-    return (
-      <Tag
-        className={
-          level === 2 ? "text-2xl font-bold uppercase pt-6 pb-3" : undefined
-        }
-      >
-        {children}
-      </Tag>
-    );
-  },
-  bulletList: ({ children }) => (
-    <ul className="list-disc pl-5 space-y-2 marker:text-am-y">{children}</ul>
-  ),
-  orderedList: ({ children }) => (
-    <ol className="list-decimal pl-5 space-y-2 marker:text-am-y">{children}</ol>
-  ),
   link: ({ href, target, rel, children }) => (
     <a
       href={href}
@@ -48,10 +30,6 @@ const components: NodeComponents = {
     </a>
   ),
 };
-
-interface Props {
-  content: string | TiptapDoc;
-}
 
 export default function ProjectCtaDialog({ get_started }: Props) {
   return (
