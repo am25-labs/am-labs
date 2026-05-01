@@ -32,6 +32,9 @@ importers:
       '@lucide/astro':
         specifier: 1.7.0
         version: 1.7.0(astro@6.1.1(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1))
+      '@plank-cms/client':
+        specifier: 0.4.0
+        version: 0.4.0
       '@tailwindcss/vite':
         specifier: 4.2.2
         version: 4.2.2(vite@7.3.1(jiti@2.6.1)(lightningcss@1.32.0))
@@ -736,6 +739,9 @@ packages:
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
+
+  '@plank-cms/client@0.4.0':
+    resolution: {integrity: sha512-biE+QLK+AaQJZ1r4RPpMIY1OySz4a/uY9Db/2TEbjnGzu1dFgS1zAkS89T1Yohbzp468eN8Vcg7XCKDfFn6wOA==}
 
   '@radix-ui/number@1.1.1':
     resolution: {integrity: sha512-MkKCwxlXTgz6CFoJx3pCwn07GKp36+aZyu/u2Ln2VrA5DcdyCZkASEDBTd8x5whTQQL5CiYf4prXKLcgQdv29g==}
@@ -4440,6 +4446,8 @@ snapshots:
   '@open-draft/until@2.1.0': {}
 
   '@oslojs/encoding@1.1.0': {}
+
+  '@plank-cms/client@0.4.0': {}
 
   '@radix-ui/number@1.1.1': {}
 
